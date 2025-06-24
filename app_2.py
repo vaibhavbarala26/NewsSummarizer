@@ -20,6 +20,7 @@ st.set_page_config(
 )
 
 # ---------- CUSTOM CSS ---------- #
+# ---------- CUSTOM CSS ---------- #
 st.markdown("""
 <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
@@ -27,19 +28,19 @@ st.markdown("""
     * {
         font-family: 'Inter', sans-serif !important;
     }
-    
+
     /* Main background with subtle gradient */
     .stApp {
         background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%) !important;
     }
-    
+
     .main, .block-container {
         background: transparent !important;
         padding: 2rem 3rem !important;
         max-width: 1200px;
         margin: 0 auto;
     }
-    
+
     /* Header Styling */
     .main-title {
         font-size: 2.5rem !important;
@@ -50,7 +51,7 @@ st.markdown("""
         margin-bottom: 0.5rem !important;
         text-align: center;
     }
-    
+
     .subtitle {
         font-size: 1.1rem !important;
         color: #64748b !important;
@@ -58,31 +59,29 @@ st.markdown("""
         text-align: center;
         margin-bottom: 2rem !important;
     }
-    
+
     /* Input Styling */
     .stTextInput > div > div > input {
-    background-color: white !important;
-    color: black !important;
-    border: 2px solid #e2e8f0 !important;
-    padding: 0.75rem 1rem !important;
-    font-size: 1rem !important;
-    transition: all 0.2s ease !important;
-    backdrop-filter: blur(10px) !important;
-}
+        background-color: white !important;
+        color: black !important;
+        border: 2px solid #e2e8f0 !important;
+        padding: 0.75rem 1rem !important;
+        font-size: 1rem !important;
+        transition: all 0.2s ease !important;
+        backdrop-filter: blur(10px) !important;
+    }
 
-/* Set placeholder color to black */
-input::placeholder {
-     color: #64748b !important;
-    opacity: 1 !important; /* Required for Firefox */
-}
+    input::placeholder {
+        color: #64748b !important;
+        opacity: 1 !important;
+    }
 
-    
     .stTextInput > div > div > input:focus {
         border-color: #8E2DE2 !important;
         box-shadow: 0 0 0 3px rgba(142, 45, 226, 0.1) !important;
         color: black !important;
     }
-    
+
     /* Button Styling */
     .stButton > button {
         background: linear-gradient(135deg, #4A00E0 0%, #8E2DE2 100%) !important;
@@ -96,12 +95,12 @@ input::placeholder {
         box-shadow: 0 4px 15px rgba(74, 0, 224, 0.3) !important;
         width: 100% !important;
     }
-    
+
     .stButton > button:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0 8px 25px rgba(74, 0, 224, 0.4) !important;
     }
-    
+
     /* Card Styling */
     .card {
         border-radius: 15px !important;
@@ -113,38 +112,38 @@ input::placeholder {
         transition: all 0.2s ease !important;
         backdrop-filter: blur(10px) !important;
     }
-    
+
     .card:hover {
         transform: translateY(-2px) !important;
         box-shadow: 0px 8px 25px rgba(0,0,0,0.12) !important;
         background: rgba(255, 255, 255, 0.95) !important;
     }
-    
+
     .card h4 {
         color: #1e293b !important;
         font-weight: 600 !important;
         margin-bottom: 0.5rem !important;
         line-height: 1.4 !important;
     }
-    
+
     .card a {
         color: #8E2DE2 !important;
         text-decoration: none !important;
         font-size: 0.9rem !important;
     }
-    
+
     .card a:hover {
         color: #4A00E0 !important;
         text-decoration: underline !important;
     }
-    
+
     .card p {
         color: #374151 !important;
         line-height: 1.7 !important;
         font-size: 1rem !important;
         margin: 0 !important;
     }
-    
+
     /* Section Headers */
     h3 {
         color: #1e293b !important;
@@ -152,7 +151,37 @@ input::placeholder {
         margin-bottom: 1rem !important;
         font-size: 1.4rem !important;
     }
-    
+
+    /* Expander Header Text */
+    .streamlit-expanderHeader {
+        color: black !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+    }
+
+    /* Fallback for expander header in newer Streamlit versions */
+    /* Expander Header */
+details > summary {
+    color: #1e293b !important; /* Dark text */
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+}
+
+/* Expander Content */
+details {
+    background-color: rgba(243, 244, 246, 0.7) !important;  /* Light gray */
+    border-radius: 10px !important;
+    padding: 0.75rem 1rem !important;
+    margin-top: 1rem !important;
+    color: #1e293b !important;  /* Text color inside */
+}
+
+details > div {
+    background-color: transparent !important;  /* Allow outer background to show */
+    color: #1e293b !important;  /* Text color */
+}
+
+
     /* Footer */
     .footer {
         text-align: center !important;
@@ -162,38 +191,39 @@ input::placeholder {
         padding: 2rem 0 !important;
         border-top: 1px solid rgba(226, 232, 240, 0.6) !important;
     }
-    
+
     /* Loading Spinner */
     .stSpinner > div {
         border-top-color: #8E2DE2 !important;
-        color:black !important;
+        color: black !important;
     }
-    
+
     /* Hide Streamlit Elements */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     header {visibility: hidden;}
-    
+
     /* Responsive Design */
     @media (max-width: 768px) {
         .main, .block-container {
             padding: 1rem 1.5rem !important;
         }
-        
+
         .main-title {
             font-size: 2rem !important;
         }
-        
+
         .subtitle {
             font-size: 1rem !important;
         }
-        
+
         .card {
             padding: 1rem !important;
         }
     }
 </style>
 """, unsafe_allow_html=True)
+
 
 # ---------- MODEL SETUP ---------- #
 @st.cache_resource
@@ -207,7 +237,7 @@ def load_model():
 tokenizer, llm = load_model()
 
 # ---------- FUNCTIONS ---------- #
-def fetch_articles(keyword, limit=5):
+def fetch_articles(keyword, limit=8):
     """Fetch articles from Indian news sources"""
     query = (
         f"{keyword} site:ndtv.com OR site:indiatoday.in OR site:hindustantimes.com "
@@ -349,6 +379,27 @@ if search_button and keyword:
 
 elif search_button and not keyword:
     st.warning("⚠️ Please enter a keyword to search for news articles.")
+# ---------- How It Works Section ---------- #
+with st.expander("🔬 How It Works"):
+    st.markdown("""
+    **NewsAI** automates the process of fetching and summarizing news from India's leading news websites.
+
+    ### 🔧 Process Breakdown:
+    1. **Google Search**: It uses advanced queries to get the latest news from verified Indian domains like NDTV, The Hindu, TOI, Indian Express, etc.
+    2. **Article Extraction**: Using the `newspaper3k` library, it extracts the full article content from the URLs.
+    3. **Text Chunking**: The article content is split into chunks using LangChain’s `RecursiveCharacterTextSplitter` to prepare it for summarization.
+    4. **Embedding & Search**: Each chunk is converted into a vector using the `BAAI/bge-base-en-v1.5` embedding model and stored in a FAISS vector index.
+    5. **Semantic Search**: Based on your keyword, we find the most relevant chunks using vector similarity search.
+    6. **AI Summarization**: A BART-based summarization model (`sshleifer/distilbart-cnn-12-6`) is used to summarize both individual and final combined chunks into an easy-to-read summary.
+
+    ### 🧠 Tech Stack:
+    - **LLM**: DistilBART from Hugging Face
+    - **Vector Search**: FAISS
+    - **Embeddings**: `BAAI/bge-base-en-v1.5`
+    - **Frontend**: Streamlit with custom CSS
+
+    This allows you to get a concise and accurate summary of any trending topic in seconds.
+    """)
 
 # Footer
 st.markdown("""
