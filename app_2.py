@@ -351,4 +351,15 @@ elif search_button and not keyword:
     st.warning("⚠️ Please enter a keyword to search for news articles.")
 
 # Footer
-st.markdown('<div class="footer">🔎 Built with ❤️ using Streamlit • Summarizing Indian news from NDTV, IE, HT, and more</div>', unsafe_allow_html=True)
+st.markdown("""
+<div class="custom-footer" style="text-align: center; margin-top: 2rem; padding: 2rem 0; border-top: 1px solid rgba(226, 232, 240, 0.6); color: #64748b;">
+    <p>
+        Made with ❤️ by <strong>Vaibhav Barala</strong> • 
+        <a href="https://github.com/Vaibhavbarala26" target="_blank" style="color: #8E2DE2; text-decoration: none;">GitHub</a> • 
+        <a href="https://medium.com/@Vaibhavbarala8" target="_blank" style="color: #8E2DE2; text-decoration: none;">Medium</a>
+    </p>
+    <p style="margin-top: 0.5rem; font-size: 0.8rem;">
+        Summarizing Indian news from NDTV, IE, HT, and more</div>', 
+    </p>
+</div>
+""", unsafe_allow_html=True)
